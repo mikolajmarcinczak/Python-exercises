@@ -1,33 +1,19 @@
 #Program służący do mnożenia macierzy /// A program to multiply two matrices
 import numpy as np
 
-def Matrix1():
+def Matrix(flag = 0):
     while True:
         try:
-            first_row = int(input('Wprowadź ilość wierszy pierwszej macierzy /// Enter the no. of rows for the first matrix: ')) 
-            first_col = int(input('Wprowadź ilość kolumn pierwszej macierzy /// Enter the no. of columns for the first matrix: '))
-            if first_row < 1 or first_col < 1:
+            row = int(input(f'Wprowadź ilość wierszy {"pierwszej" if flag == 0 else "drugiej"} macierzy /// Enter the no. of rows for the {"first" if flag == 0 else "drugiej"} matrix: ')) 
+            col = int(input(f'Wprowadź ilość kolumn {"pierwszej" if flag == 0 else "drugiej"} macierzy /// Enter the no. of columns for the {"first" if flag == 0 else "drugiej"} matrix: '))
+            if row < 1 or col < 1:
                 print('\nIlość kolumn lub wierszy nie może być niedodatnia. /// The no. of columns or rows can\'t be non-positive.')
                 continue
             break
         except ValueError:
             print('Podana wartość nie jest liczbą! /// The entered value is not a number!')
             continue
-    return first_row, first_col
-
-def Matrix2():
-    while True:
-        try:
-            second_row = int(input('Wprowadź ilość wierszy drugiej macierzy /// Enter the no. of rows for the second matrix: '))
-            second_col = int(input('Wprowadź ilość kolumn drugiej macierzy /// Enter the no. of columns for the second matrix: '))
-            if second_row < 1 or second_col < 1:
-                print('\nIlość kolumn lub wierszy nie może być niedodatnia. /// The no. of columns or rows can\'t be non-positive.')
-                continue
-            break
-        except ValueError:
-            print('Podana wartość nie jest liczbą! /// The entered value is not a number!')
-            continue
-    return second_row, second_col
+    return row, col
 
 def Fill_matrix(matrix, row, col):
     i = 0
@@ -45,12 +31,12 @@ def Fill_matrix(matrix, row, col):
 
 
 def UserInput():
-    f_row, f_col = Matrix1()
-    s_row, s_col = Matrix2()
+    f_row, f_col = Matrix()
+    s_row, s_col = Matrix(1)
     while f_col != s_row:
         print('\nIlość kolumn pierwszej macierzy musi odpowiadać ilości wierszy drugiej macierzy. /// The no. of columns of the first matrix must be equal to the no. of rows of the second matrix.')
-        f_row, f_col = Matrix1()
-        s_row, s_col = Matrix2()
+        f_row, f_col = Matrix()
+        s_row, s_col = Matrix(1)
     
     first_matrix = np.empty([f_row, f_col])
     second_matrix = np.empty([s_row, s_col])
