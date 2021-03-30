@@ -40,7 +40,9 @@ def UserInput(): #Funkcja na utworzenie macierzy do obliczeń /// A function to 
     
     first_matrix = np.empty([f_row, f_col])
     second_matrix = np.empty([s_row, s_col])
+    print('\nPierwsza macierz /// First matrix')
     first_matrix = Fill_matrix(first_matrix, f_row, f_col)
+    print('\nDruga macierz /// Second matrix')
     second_matrix = Fill_matrix(second_matrix, s_row, s_col)
 
     return first_matrix, second_matrix
