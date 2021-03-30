@@ -1,7 +1,7 @@
 #Program służący do mnożenia macierzy /// A program to multiply two matrices
 import numpy as np
 
-def Matrix(flag = 0):
+def Matrix(flag = 0): #Funkcja na wprowadzanie ilości wierszy i kolumn /// A function to input the no. of rows and columns
     while True:
         try:
             row = int(input(f'Wprowadź ilość wierszy {"pierwszej" if flag == 0 else "drugiej"} macierzy /// Enter the no. of rows for the {"first" if flag == 0 else "drugiej"} matrix: ')) 
@@ -15,7 +15,7 @@ def Matrix(flag = 0):
             continue
     return row, col
 
-def Fill_matrix(matrix, row, col):
+def Fill_matrix(matrix, row, col): #Funkcja na wypełnienie macierzy wartościami /// A function to fill the matrix with values
     i = 0
     while i < row:
         j = 0
@@ -30,7 +30,7 @@ def Fill_matrix(matrix, row, col):
     return matrix
 
 
-def UserInput():
+def UserInput(): #Funkcja na utworzenie macierzy do obliczeń /// A function to create the matrices
     f_row, f_col = Matrix()
     s_row, s_col = Matrix(1)
     while f_col != s_row:
@@ -45,7 +45,7 @@ def UserInput():
 
     return first_matrix, second_matrix
 
-def Multiply(first_matrix, second_matrix):
+def Multiply(first_matrix, second_matrix): #Funkcja na mnożenie macierzy /// A function to multiply the matrices
     result = np.zeros([len(first_matrix), len(second_matrix[0])])
     for i in range(len(first_matrix)):
         for j in range(len(second_matrix[0])):
