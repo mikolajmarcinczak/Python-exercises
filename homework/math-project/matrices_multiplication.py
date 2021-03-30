@@ -4,8 +4,8 @@ import numpy as np
 def Matrix(flag = 0): #Funkcja na wprowadzanie ilości wierszy i kolumn /// A function to input the no. of rows and columns
     while True:
         try:
-            row = int(input(f'Wprowadź ilość wierszy {"pierwszej" if flag == 0 else "drugiej"} macierzy /// Enter the no. of rows for the {"first" if flag == 0 else "drugiej"} matrix: ')) 
-            col = int(input(f'Wprowadź ilość kolumn {"pierwszej" if flag == 0 else "drugiej"} macierzy /// Enter the no. of columns for the {"first" if flag == 0 else "drugiej"} matrix: '))
+            row = int(input(f'Wprowadź ilość wierszy {"pierwszej" if flag == 0 else "drugiej"} macierzy /// Enter the no. of rows for the {"first" if flag == 0 else "second"} matrix: ')) 
+            col = int(input(f'Wprowadź ilość kolumn {"pierwszej" if flag == 0 else "drugiej"} macierzy /// Enter the no. of columns for the {"first" if flag == 0 else "second"} matrix: '))
             if row < 1 or col < 1:
                 print('\nIlość kolumn lub wierszy nie może być niedodatnia. /// The no. of columns or rows can\'t be non-positive.')
                 continue
