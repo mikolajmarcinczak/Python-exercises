@@ -29,7 +29,6 @@ def Fill_matrix(matrix, row, col): #Funkcja na wypełnienie macierzy wartościam
         i += 1
     return matrix
 
-
 def UserInput(): #Funkcja na utworzenie macierzy do obliczeń /// A function to create the matrices
     f_row, f_col = Matrix()
     s_row, s_col = Matrix(1)
