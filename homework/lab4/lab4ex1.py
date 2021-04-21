@@ -1,5 +1,5 @@
 ﻿import numpy as np
-file = open('../../zajecia 4/pliki/projektowe.txt', 'r')
+file = open('projektowe.txt', 'r')
 text = file.read()
 
 def LetterCount(text):
